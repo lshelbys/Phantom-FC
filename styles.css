@@ -221,68 +221,179 @@ body.rtl-mode .back-to-top {
 
 
 /* ── HERO ───────────────────────────────────────────────────– */
+/* ── HERO ───────────────────────────────────────────────────── */
 .hero {
-    background: radial-gradient(ellipse at 60% 40%, #1a2a1a 0%, #0d150d 40%, #080808 100%);
+    background: #060606;
     position: relative;
-    min-height: 520px;
+    min-height: 620px;
     display: flex;
     align-items: center;
+    justify-content: center;
     overflow: hidden;
-    padding: 4rem 24px;
+    padding: 6rem 24px;
 }
 
+/* Atmospheric floodlight glow from above */
+.hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse 70% 60% at 50% -10%, rgba(255,255,255,0.07) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 30% at 15% 50%, rgba(255,255,255,0.03) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 30% at 85% 50%, rgba(255,255,255,0.03) 0%, transparent 60%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Subtle diagonal beam lines */
 .hero::after {
     content: '';
     position: absolute;
     inset: 0;
-    background-image:
-        repeating-linear-gradient(0deg, transparent, transparent 60px, rgba(255,255,255,0.02) 60px, rgba(255,255,255,0.02) 61px),
-        repeating-linear-gradient(90deg, transparent, transparent 60px, rgba(255,255,255,0.02) 60px, rgba(255,255,255,0.02) 61px);
+    background-image: repeating-linear-gradient(
+        -28deg,
+        transparent,
+        transparent 100px,
+        rgba(255,255,255,0.013) 100px,
+        rgba(255,255,255,0.013) 101px
+    );
+    z-index: 1;
     pointer-events: none;
 }
 
-.hero-bg, .hero-overlay { position: absolute; inset: 0; }
-.hero-overlay { background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.6) 100%); }
+/* ── HERO BACKGROUND & OVERLAY ─────────────────────────────── */
+.hero-bg, .hero-overlay, .hero-pitch { position: absolute; inset: 0; }
 
+.hero-overlay {
+    background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.55) 0%,
+        rgba(0,0,0,0.1)  30%,
+        rgba(0,0,0,0.1)  70%,
+        rgba(0,0,0,0.65) 100%
+    );
+    z-index: 4;
+}
+
+/* ── FOOTBALL PITCH MARKINGS ───────────────────────────────── */
+.hero-pitch {
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* Outer decorative ring */
+.pitch-outer-ring {
+    position: absolute;
+    width: 900px;
+    height: 900px;
+    border: 1px solid rgba(255,255,255,0.03);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Center circle — main pitch element */
+.pitch-center-circle {
+    position: absolute;
+    width: 520px;
+    height: 520px;
+    border: 1.5px solid rgba(255,255,255,0.07);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow:
+        0 0 0 1px rgba(255,255,255,0.02),
+        inset 0 0 60px rgba(255,255,255,0.015);
+}
+
+/* Halfway line */
+.pitch-halfway-line {
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(255,255,255,0.05) 15%,
+        rgba(255,255,255,0.05) 85%,
+        transparent 100%
+    );
+    top: 50%;
+}
+
+/* Center spot */
+.pitch-center-spot {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: rgba(255,255,255,0.18);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 12px rgba(255,255,255,0.2);
+}
+
+/* ── HERO CONTENT ──────────────────────────────────────────── */
 .hero-content {
     position: relative;
     z-index: 10;
     max-width: 700px;
+    text-align: center;
 }
 
 .hero-logo-wrap {
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
 }
 
 .hero-logo-img {
-    height: 80px;
+    height: 120px;
     width: auto;
+    filter: drop-shadow(0 4px 24px rgba(255,255,255,0.12)) drop-shadow(0 0 60px rgba(255,255,255,0.06));
 }
 
 .hero-title {
-    font-size: 3.8rem;
+    font-size: 4.5rem;
     font-weight: 700;
-    letter-spacing: -1px;
+    letter-spacing: 2px;
     color: var(--white);
-    line-height: 1.1;
-    margin-bottom: 0.8rem;
+    line-height: 1;
+    margin-bottom: 0;
+    text-shadow: 0 2px 40px rgba(0,0,0,0.8);
+}
+
+/* Gold accent bar below title */
+.hero-title-bar {
+    width: 56px;
+    height: 3px;
+    background: #ffffff;
+    margin: 1.2rem auto 1.4rem;
+    opacity: 0.6;
 }
 
 .hero-subtitle {
-    font-size: 1rem;
-    color: var(--text-gray);
-    letter-spacing: 2px;
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.45);
+    letter-spacing: 5px;
     text-transform: uppercase;
-    margin-bottom: 2.5rem;
+    margin-bottom: 2.8rem;
 }
 
-.hero-buttons { display: flex; gap: 1rem; flex-wrap: wrap; }
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
 
 .hero-btn {
-    padding: 0.75rem 2rem;
-    font-size: 0.85rem;
+    padding: 0.8rem 2.2rem;
+    font-size: 0.8rem;
     font-weight: 700;
-    letter-spacing: 0.5px;
+    letter-spacing: 1.5px;
     border-radius: 2px;
     transition: all 0.2s;
     display: inline-block;
@@ -295,17 +406,20 @@ body.rtl-mode .back-to-top {
 }
 
 .hero-btn.btn-white:hover {
-    background: var(--accent-light);
+    background: #e0e0e0;
+    transform: translateY(-1px);
 }
 
 .hero-btn.btn-ghost {
-    border: 1.5px solid rgba(255,255,255,0.4);
+    border: 1.5px solid rgba(255,255,255,0.35);
     color: var(--white);
+    background: rgba(255,255,255,0.04);
 }
 
 .hero-btn.btn-ghost:hover {
-    border-color: var(--white);
-    background: rgba(255,255,255,0.08);
+    border-color: rgba(255,255,255,0.7);
+    background: rgba(255,255,255,0.1);
+    transform: translateY(-1px);
 }
 
 /* ── SECTION TITLES ─────────────────────────────────────────– */
@@ -1350,8 +1464,11 @@ body.rtl-mode .back-to-top {
 
     .header-inner { position: relative; }
 
-    .hero { min-height: 380px; padding: 2.5rem 16px; }
-    .hero-title { font-size: 2rem; }
+    .hero { min-height: 420px; padding: 3rem 16px; }
+    .hero-title { font-size: 2.4rem; letter-spacing: 1px; }
+    .hero-logo-img { height: 90px; }
+    .pitch-center-circle { width: 340px; height: 340px; }
+    .pitch-outer-ring { width: 560px; height: 560px; }
 
     .news-grid {
         grid-template-columns: 1fr;
@@ -1395,9 +1512,12 @@ body.rtl-mode .back-to-top {
 }
 
 @media (max-width: 480px) {
-    .hero-title { font-size: 1.6rem; }
-    .hero-subtitle { font-size: 0.8rem; }
-    .hero-btn { padding: 0.65rem 1.4rem; font-size: 0.8rem; }
+    .hero-title { font-size: 1.8rem; letter-spacing: 0.5px; }
+    .hero-logo-img { height: 70px; }
+    .hero-subtitle { font-size: 0.7rem; letter-spacing: 3px; }
+    .hero-btn { padding: 0.65rem 1.4rem; font-size: 0.78rem; }
+    .pitch-center-circle { width: 260px; height: 260px; }
+    .pitch-outer-ring { width: 400px; height: 400px; }
 
     .match-app-header { padding: 0.6rem 1rem; }
     .match-team-crest { width: 48px; height: 48px; }
