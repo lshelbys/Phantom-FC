@@ -19,7 +19,7 @@ const translations = {
         'sec-stadium': 'Stadium',
 
         // Hero
-        'hero-title': 'ALMAIL SPORTS CLUB',
+        'hero-title': 'PHANTOM FC',
         'hero-subtitle': 'Professional Amateur Football Club',
         'hero-btn-results': 'VIEW RESULTS',
         'hero-btn-squad': 'OUR SQUAD',
@@ -27,8 +27,8 @@ const translations = {
         // News Section
         'news-title': 'LATEST NEWS',
         'news-category': 'CLUB NEWS',
-        'news-article-title': 'Almail SC Renews Amateur Club Status for 2026',
-        'news-article-desc': 'Almail Sports Club is proud to announce the renewal of its amateur club status for the 2026 season, reaffirming our commitment to grassroots football and developing talent in the community.',
+        'news-article-title': 'Phantom FC Renews Amateur Club Status for 2026',
+        'news-article-desc': 'Phantom FC is proud to announce the renewal of its amateur club status for the 2026 season, reaffirming our commitment to grassroots football and developing talent in the community.',
         'news-read-more': 'READ FULL ARTICLE',
         'news-date': '17 JUN 2026',
 
@@ -40,7 +40,7 @@ const translations = {
         'season-2022': '2022',
         'competition-dumankaya': 'DUMANKAYA CUP',
         'match-final': 'FINAL',
-        'team-almail': 'ALMAIL SC',
+        'team-almail': 'PHANTOM FC',
         'team-shabab': 'SHABAB AL HURA',
         'home': 'Home',
         'away': 'Away',
@@ -61,14 +61,14 @@ const translations = {
         'kickoff': 'Kick-off',
         'venue': 'Venue',
         'result': 'Result',
-        'almail-win': 'Almail SC WIN',
+        'almail-win': 'Phantom FC WIN',
         'goal-timeline': 'Goal timeline coming soon.',
         'lineup-details': 'Line-up details coming soon.',
 
         // Squad Section
         'squad-title': 'MEN\'S FIRST TEAM',
         'squad-coming': 'Squad Coming Soon',
-        'player-profiles': 'Player profiles for the Almail Sports Club squad will be published soon. Check back for full squad details.',
+        'player-profiles': 'Player profiles for the Phantom FC squad will be published soon. Check back for full squad details.',
 
         // Tickets Section
         'tickets-title': 'TICKETS & MEMBERSHIP',
@@ -78,18 +78,18 @@ const translations = {
         // Shop Section
         'shop-title': 'OFFICIAL SHOP',
         'shop-coming': 'Official Shop Coming Soon',
-        'shop-desc': 'Our official merchandise shop is launching soon. Check back for exclusive Almail SC gear and apparel.',
+        'shop-desc': 'Our official merchandise shop is launching soon. Check back for exclusive Phantom FC gear and apparel.',
 
         // Club Info
         'club-title': 'CLUB INFORMATION',
         'stadium': 'STADIUM',
-        'stadium-desc': 'Bizarri\'s Stadium, proudly sponsored by Bizarri, is the home ground of Almail Sports Club with world-class facilities.',
+        'stadium-desc': 'Bizarri\'s Stadium, proudly sponsored by Bizarri, is the home ground of Phantom FC with world-class facilities.',
         'learn-more': 'LEARN MORE',
         'history': 'HISTORY',
-        'history-desc': 'The full history of Almail Sports Club is coming soon. Discover the journey of the club from its founding to today.',
+        'history-desc': 'The full history of Phantom FC is coming soon. Discover the journey of the club from its founding to today.',
         'coming-soon': 'COMING SOON',
         'player-form': 'PLAYER FORM',
-        'player-form-desc': 'Interested in joining Almail SC? Get in touch with the club directly. Please provide: name, position, date of birth, country, height, and a photo.',
+        'player-form-desc': 'Interested in joining Phantom FC? Get in touch with the club directly. Please provide: name, position, date of birth, country, height, and a photo.',
         'email-us': 'EMAIL US',
         'whatsapp': 'WHATSAPP',
         'contact-us': 'CONTACT US',
@@ -105,7 +105,7 @@ const translations = {
         'footer-first-team': 'First Team',
         'footer-fixtures': 'Fixtures',
         'footer-follow-us': 'FOLLOW US',
-        'footer-copyright': "© 2026 Almail Sports Club. All rights reserved. • Bizarri's Stadium",
+        'footer-copyright': "© 2026 Phantom FC. All rights reserved. • Bizarri's Stadium",
         'back-to-top-label': 'BACK TO TOP',
     },
     ar: {
@@ -128,7 +128,7 @@ const translations = {
         'sec-stadium': 'الملعب',
 
         // Hero
-        'hero-title': 'نادي الميل الرياضي',
+        'hero-title': 'فانتوم إف سي',
         'hero-subtitle': 'نادي كرة قدم هاوي احترافي',
         'hero-btn-results': 'عرض النتائج',
         'hero-btn-squad': 'فريقنا',
@@ -136,8 +136,8 @@ const translations = {
         // News Section
         'news-title': 'أحدث الأخبار',
         'news-category': 'أخبار النادي',
-        'news-article-title': 'نادي الميل يجدد حالته كنادي هاوي لعام 2026',
-        'news-article-desc': 'يفخر نادي الميل الرياضي بإعلان تجديد حالته كنادي هاوي للموسم 2026، مؤكداً التزامنا بكرة القدم الشعبية وتطوير المواهب في المجتمع.',
+        'news-article-title': 'فانتوم إف سي يجدد حالته كنادي هاوي لعام 2026',
+        'news-article-desc': 'يفخر فانتوم إف سي بإعلان تجديد حالته كنادي هاوي للموسم 2026، مؤكداً التزامنا بكرة القدم الشعبية وتطوير المواهب في المجتمع.',
         'news-read-more': 'اقرأ المقال الكامل',
         'news-date': '17 يونيو 2026',
 
@@ -149,7 +149,7 @@ const translations = {
         'season-2022': '2022',
         'competition-dumankaya': 'كأس دومانكايا',
         'match-final': 'النهائي',
-        'team-almail': 'نادي الميل',
+        'team-almail': 'فانتوم إف سي',
         'team-shabab': 'شباب الهرة',
         'home': 'الملعب الخاص',
         'away': 'الملعب الضيف',
@@ -170,14 +170,14 @@ const translations = {
         'kickoff': 'بدء المباراة',
         'venue': 'الملعب',
         'result': 'النتيجة',
-        'almail-win': 'فوز نادي الميل',
+        'almail-win': 'فوز فانتوم إف سي',
         'goal-timeline': 'سجل الأهداف قادم قريباً.',
         'lineup-details': 'تفاصيل التشكيلة قادمة قريباً.',
 
         // Squad Section
         'squad-title': 'فريق الرجال الأول',
         'squad-coming': 'الفريق قريباً',
-        'player-profiles': 'ستتم نشر ملفات لاعبي فريق نادي الميل الرياضي قريباً. عد للاطلاع على تفاصيل الفريق الكاملة.',
+        'player-profiles': 'ستتم نشر ملفات لاعبي فريق فانتوم إف سي قريباً. عد للاطلاع على تفاصيل الفريق الكاملة.',
 
         // Tickets Section
         'tickets-title': 'التذاكر والعضوية',
@@ -187,18 +187,18 @@ const translations = {
         // Shop Section
         'shop-title': 'المتجر الرسمي',
         'shop-coming': 'المتجر قريباً',
-        'shop-desc': 'سيتم إطلاق متجرنا الرسمي للبضائع قريباً. عد للاطلاع على منتجات نادي الميل الحصرية.',
+        'shop-desc': 'سيتم إطلاق متجرنا الرسمي للبضائع قريباً. عد للاطلاع على منتجات فانتوم إف سي الحصرية.',
 
         // Club Info
         'club-title': 'معلومات النادي',
         'stadium': 'الملعب',
-        'stadium-desc': 'ملعب بيزاري، برعاية شركة بيزاري، هو ملعب نادي الميل الرياضي مع مرافق عالمية.',
+        'stadium-desc': 'ملعب بيزاري، برعاية شركة بيزاري، هو ملعب فانتوم إف سي مع مرافق عالمية.',
         'learn-more': 'اقرأ المزيد',
         'history': 'التاريخ',
-        'history-desc': 'سيأتي التاريخ الكامل لنادي الميل الرياضي قريباً. اكتشف رحلة النادي من تأسيسه حتى اليوم.',
+        'history-desc': 'سيأتي التاريخ الكامل لفانتوم إف سي قريباً. اكتشف رحلة النادي من تأسيسه حتى اليوم.',
         'coming-soon': 'قريباً',
         'player-form': 'نموذج اللاعب',
-        'player-form-desc': 'هل أنت مهتم بالانضمام إلى نادي الميل؟ تواصل مع النادي مباشرة. يرجى تقديم: الاسم والمركز وتاريخ الميلاد والدولة والطول والصورة.',
+        'player-form-desc': 'هل أنت مهتم بالانضمام إلى فانتوم إف سي؟ تواصل مع النادي مباشرة. يرجى تقديم: الاسم والمركز وتاريخ الميلاد والدولة والطول والصورة.',
         'email-us': 'أرسل بريداً',
         'whatsapp': 'واتساب',
         'contact-us': 'تواصل معنا',
@@ -214,7 +214,7 @@ const translations = {
         'footer-first-team': 'الفريق الأول',
         'footer-fixtures': 'الجدول',
         'footer-follow-us': 'تابعنا',
-        'footer-copyright': '© 2026 نادي الميل الرياضي. جميع الحقوق محفوظة. • ملعب بيزاري',
+        'footer-copyright': '© 2026 فانتوم إف سي. جميع الحقوق محفوظة. • ملعب بيزاري',
         'back-to-top-label': 'أعلى الصفحة',
     }
 };
@@ -223,7 +223,7 @@ let currentLanguage = 'en';
 
 function setLanguage(lang) {
     currentLanguage = lang;
-    localStorage.setItem('almailLanguage', lang);
+    localStorage.setItem('phantomLanguage', lang);
 
     // Update all translatable elements
     document.querySelectorAll('[data-i18n]').forEach(el => {
@@ -253,6 +253,6 @@ function setLanguage(lang) {
 
 // Initialize language on page load
 document.addEventListener('DOMContentLoaded', () => {
-    const savedLang = localStorage.getItem('almailLanguage') || 'en';
+    const savedLang = localStorage.getItem('phantomLanguage') || 'en';
     setLanguage(savedLang);
 });
