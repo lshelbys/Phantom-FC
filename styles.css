@@ -1652,3 +1652,77 @@ body.rtl-mode .float-menu-top {
     color: var(--white) !important;
     -webkit-text-fill-color: var(--white) !important;
 }
+
+/* Squad Grid */
+.squad-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.squad-card {
+    background: var(--card-bg, #1a1a1a);
+    border: 1px solid var(--border, rgba(255,255,255,0.08));
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: default;
+}
+
+.squad-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+}
+
+.squad-card-photo {
+    width: 100%;
+    aspect-ratio: 1;
+    background: rgba(255,255,255,0.04);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.squad-photo-placeholder i {
+    font-size: 5rem;
+    color: rgba(255,255,255,0.15);
+}
+
+.squad-card-info {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.squad-card-number {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--accent, #e8c84a);
+    letter-spacing: 0.05em;
+}
+
+.squad-card-name {
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 0;
+    color: #fff;
+}
+
+.squad-card-position {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.6);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.squad-card-nationality {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.4);
+    margin-top: 0.2rem;
+}
+
+.news-img-2 {
+    background: linear-gradient(135deg, #1a2a1a 0%, #0d1a0d 100%);
+}
