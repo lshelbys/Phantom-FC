@@ -3,6 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Phantom FC – Official website of Phantom FC, a professional amateur football club. News, fixtures, results, squad, and more.">
+    <meta property="og:title" content="Phantom FC – Official Website">
+    <meta property="og:description" content="Official website of Phantom FC. News, fixtures, results, squad, and more.">
+    <meta property="og:image" content="logo.png">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="logo.png">
     <title>Phantom FC – Official Website</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -70,6 +76,17 @@
                         <a href="news-amateur-status.html" class="news-link" data-i18n="news-read-more">READ FULL ARTICLE</a>
                     </div>
                 </article>
+                <article class="news-card">
+                    <div class="news-img news-img-2">
+                        <div class="news-category-badge">MATCH REPORT</div>
+                    </div>
+                    <div class="news-body">
+                        <span class="news-meta">8 AUG 2025 &nbsp;&bull;&nbsp; Match Report</span>
+                        <h3>Phantom FC Win the Dumankaya Cup Final 7–4</h3>
+                        <p>A dominant display saw Phantom FC claim the Dumankaya Cup trophy with a 7–4 victory over Shabab Al Hura, with Tayem Eyad netting four goals.</p>
+                        <a href="news-dumankaya-cup.html" class="news-link">READ FULL ARTICLE</a>
+                    </div>
+                </article>
             </div>
         </div>
     </section>
@@ -98,7 +115,7 @@
                         <div class="match-app-team home-team">
                             <div class="match-team-crest">
                                 <img src="logo.png" alt="PFC" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                                <span class="crest-placeholder">A</span>
+                                <span class="crest-placeholder">P</span>
                             </div>
                             <span class="match-team-name" data-i18n="team-phantom">PHANTOM FC</span>
                         </div>
@@ -162,7 +179,7 @@
                     <div class="modal-team">
                         <div class="modal-crest home">
                             <img src="logo.png" alt="PFC" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                            <span class="crest-placeholder">A</span>
+                            <span class="crest-placeholder">P</span>
                         </div>
                         <span class="modal-team-name">PHANTOM FC</span>
                     </div>
@@ -236,7 +253,7 @@
                             <span class="goal-scorer">Giyath</span>
                         </div>
                     </div>
-                    <!-- 2' Tayem (Almail) 1–1 -->
+                    <!-- 2' Tayem 1–1 -->
                     <div class="goal-row">
                         <div class="goal-home-col">
                             <span class="goal-scorer">Tayem</span>
@@ -246,7 +263,7 @@
                         <div class="goal-time-col">2'</div>
                         <div class="goal-away-col"></div>
                     </div>
-                    <!-- 3' Tayem (Almail) 2–1 -->
+                    <!-- 3' Tayem 2–1 -->
                     <div class="goal-row">
                         <div class="goal-home-col">
                             <span class="goal-scorer">Tayem</span>
@@ -266,7 +283,7 @@
                             <span class="goal-scorer">Samo</span>
                         </div>
                     </div>
-                    <!-- 13' Jasem (Almail) 3–2 -->
+                    <!-- 13' Jasem 3–2 -->
                     <div class="goal-row">
                         <div class="goal-home-col">
                             <span class="goal-scorer">Jasem</span>
@@ -276,7 +293,7 @@
                         <div class="goal-time-col">13'</div>
                         <div class="goal-away-col"></div>
                     </div>
-                    <!-- 14' Tayem (Almail) 4–2 -->
+                    <!-- 14' Tayem 4–2 -->
                     <div class="goal-row">
                         <div class="goal-home-col">
                             <span class="goal-scorer">Tayem</span>
@@ -296,7 +313,7 @@
                             <span class="goal-scorer">Samo</span>
                         </div>
                     </div>
-                    <!-- 15' Jasem (Almail) 5–3 -->
+                    <!-- 15' Jasem 5–3 -->
                     <div class="goal-row">
                         <div class="goal-home-col">
                             <span class="goal-scorer">Jasem</span>
@@ -316,7 +333,7 @@
                             <span class="goal-scorer">Samo</span>
                         </div>
                     </div>
-                    <!-- 17' Jasem (Almail) 6–4 -->
+                    <!-- 17' Jasem 6–4 -->
                     <div class="goal-row">
                         <div class="goal-home-col">
                             <span class="goal-scorer">Jasem</span>
@@ -326,7 +343,7 @@
                         <div class="goal-time-col">17'</div>
                         <div class="goal-away-col"></div>
                     </div>
-                    <!-- 20'+1 Tayem (Almail) 7–4 -->
+                    <!-- 20'+1 Tayem 7–4 -->
                     <div class="goal-row">
                         <div class="goal-home-col">
                             <span class="goal-scorer">Tayem</span>
@@ -371,10 +388,25 @@
     <section id="teams" class="teams-section">
         <div class="section-container">
             <h2 class="section-title" data-i18n="squad-title">MEN'S FIRST TEAM</h2>
-            <div class="coming-soon-section">
-                <i class="fas fa-users"></i>
-                <h3 data-i18n="squad-coming">Squad Coming Soon</h3>
-                <p data-i18n="player-profiles">Player profiles for the Phantom FC squad will be published soon. Check back for full squad details.</p>
+            <div class="squad-grid">
+                <div class="squad-card">
+                    <div class="squad-card-photo squad-photo-placeholder"><i class="fas fa-user-circle"></i></div>
+                    <div class="squad-card-info">
+                        <span class="squad-card-number">10</span>
+                        <h3 class="squad-card-name">Tayem Eyad</h3>
+                        <span class="squad-card-position">Left Winger</span>
+                        <span class="squad-card-nationality"><i class="fas fa-flag"></i> Palestinian</span>
+                    </div>
+                </div>
+                <div class="squad-card">
+                    <div class="squad-card-photo squad-photo-placeholder"><i class="fas fa-user-circle"></i></div>
+                    <div class="squad-card-info">
+                        <span class="squad-card-number">8</span>
+                        <h3 class="squad-card-name">Jasem Almail</h3>
+                        <span class="squad-card-position">Midfielder</span>
+                        <span class="squad-card-nationality"><i class="fas fa-flag"></i> Kuwaiti</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -422,18 +454,18 @@
                     <h4><i class="fas fa-running"></i> <span data-i18n="player-form">PLAYER FORM</span></h4>
                     <p data-i18n="player-form-desc">Interested in joining Phantom FC? Get in touch with the club directly. Please provide: name, position, date of birth, country, height, and a photo.</p>
                     <div class="contact-links">
-                        <a href="mailto:almailclub@gmail.com?subject=Player%20Application&body=Name:%0APosition:%0ADate%20of%20Birth:%0ACountry:%0AHeight:%0A%0APlease%20attach%20a%20photo." class="info-link" data-i18n="email-us">EMAIL US</a>
+                        <a href="mailto:phantomfckw@gmail.com?subject=Player%20Application&body=Name:%0APosition:%0ADate%20of%20Birth:%0ACountry:%0AHeight:%0A%0APlease%20attach%20a%20photo." class="info-link" data-i18n="email-us">EMAIL US</a>
                         <a href="https://wa.me/14402785870?text=Hi%2C%20I%27m%20interested%20in%20joining%20Phantom%20FC" target="_blank" rel="noopener" class="info-link whatsapp" data-i18n="whatsapp">WHATSAPP</a>
                     </div>
                     <div class="contact-details">
-                        <span><i class="fas fa-envelope"></i> almailclub@gmail.com</span>
+                        <span><i class="fas fa-envelope"></i> phantomfckw@gmail.com</span>
                         <span><i class="fab fa-whatsapp"></i> +1 (440) 278-5870</span>
                     </div>
                 </div>
                 <div class="info-box">
                     <h4><i class="fas fa-envelope"></i> <span data-i18n="contact">CONTACT</span></h4>
                     <p data-i18n="contact-desc">Get in touch with us for general enquiries about the club, partnerships, or supporter information.</p>
-                    <a href="mailto:almailclub@gmail.com" class="info-link" data-i18n="contact-us">CONTACT US</a>
+                    <a href="mailto:phantomfckw@gmail.com" class="info-link" data-i18n="contact-us">CONTACT US</a>
                 </div>
             </div>
         </div>
@@ -450,7 +482,7 @@
                 <div>
                     <h3>PHANTOM FC</h3>
                     <p>Professional Amateur Football</p>
-                    <p class="footer-email"><a href="mailto:almailclub@gmail.com">almailclub@gmail.com</a></p>
+                    <p class="footer-email"><a href="mailto:phantomfckw@gmail.com">phantomfckw@gmail.com</a></p>
                 </div>
             </div>
             <div class="footer-cols">
@@ -476,9 +508,6 @@
                     <h4>FOLLOW US</h4>
                     <ul class="social-list">
                         <li><a href="https://www.instagram.com/phantomfckw" target="_blank" rel="noopener"><i class="fab fa-instagram"></i> @phantomfckw</a></li>
-                        <li><a href="https://x.com/almailclub" target="_blank" rel="noopener"><i class="fab fa-x-twitter"></i> @almailclub</a></li>
-                        <li><a href="https://youtube.com/@almailsportsclub" target="_blank" rel="noopener"><i class="fab fa-youtube"></i> @almailsportsclub</a></li>
-                        <li><a href="https://tiktok.com/@almail_sc" target="_blank" rel="noopener"><i class="fab fa-tiktok"></i> @almail_sc</a></li>
                     </ul>
                 </div>
             </div>
@@ -489,18 +518,6 @@
             <a href="https://www.instagram.com/phantomfckw" target="_blank" rel="noopener" class="social-icon-link">
                 <i class="fab fa-instagram"></i>
                 <span>@phantomfckw</span>
-            </a>
-            <a href="https://x.com/almailclub" target="_blank" rel="noopener" class="social-icon-link">
-                <i class="fab fa-x-twitter"></i>
-                <span>@almailclub</span>
-            </a>
-            <a href="https://youtube.com/@almailsportsclub" target="_blank" rel="noopener" class="social-icon-link">
-                <i class="fab fa-youtube"></i>
-                <span>@almailsportsclub</span>
-            </a>
-            <a href="https://tiktok.com/@almail_sc" target="_blank" rel="noopener" class="social-icon-link">
-                <i class="fab fa-tiktok"></i>
-                <span>@almail_sc</span>
             </a>
         </div>
 
