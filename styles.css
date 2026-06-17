@@ -488,6 +488,51 @@ body.rtl-mode .back-to-top {
 .gn-l { left: 0; }
 .gn-r { right: 0; }
 
+/* ── HERO ANIMATIONS ────────────────────────────────────────── */
+@keyframes field-enter {
+    from { opacity: 0; transform: scale(0.93) translateY(30px); }
+    to   { opacity: 1; transform: scale(1)    translateY(0);    }
+}
+@keyframes field-breathe {
+    0%, 100% { transform: rotateX(61deg) scale(1);     }
+    50%       { transform: rotateX(61deg) scale(1.018); }
+}
+@keyframes glow-pulse {
+    0%, 100% { opacity: 0.7; }
+    50%       { opacity: 1;   }
+}
+@keyframes fade-up {
+    from { opacity: 0; transform: translateY(22px); }
+    to   { opacity: 1; transform: translateY(0);    }
+}
+@keyframes bar-expand {
+    from { width: 0;    opacity: 0; }
+    to   { width: 52px; opacity: 1; }
+}
+@keyframes fade-in {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Field container slides in on load */
+.hero-field-3d {
+    animation: field-enter 1.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+/* Field surface breathes subtly in a loop */
+.field-surface {
+    animation: field-breathe 10s ease-in-out 1.6s infinite;
+}
+/* Green atmosphere pulses slowly */
+.hero::before {
+    animation: glow-pulse 6s ease-in-out infinite;
+}
+
+/* Text content staggers in */
+.hero-title       { animation: fade-up    0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.3s  both; }
+.hero-title-bar   { animation: bar-expand 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.75s both; }
+.hero-subtitle    { animation: fade-up    0.6s cubic-bezier(0.22, 1, 0.36, 1) 1.0s  both; }
+.hero-buttons     { animation: fade-up    0.6s cubic-bezier(0.22, 1, 0.36, 1) 1.2s  both; }
+
 /* ── HERO OVERLAY & CONTENT ────────────────────────────────── */
 .hero-overlay {
     position: absolute;
@@ -508,15 +553,7 @@ body.rtl-mode .back-to-top {
     z-index: 10;
     max-width: 700px;
     text-align: center;
-    margin-top: -80px; /* shift content up so field dominates lower half */
-}
-
-.hero-logo-wrap { margin-bottom: 1.8rem; }
-
-.hero-logo-img {
-    height: 120px;
-    width: auto;
-    filter: drop-shadow(0 4px 28px rgba(255,255,255,0.14)) drop-shadow(0 0 70px rgba(255,255,255,0.07));
+    margin-top: -40px; /* shift content up so field dominates lower half */
 }
 
 .hero-title {
