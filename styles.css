@@ -274,6 +274,7 @@ body.rtl-mode .back-to-top {
     display: flex;
     align-items: flex-end;
     justify-content: center;
+    transform-style: preserve-3d;
 }
 
 .field-surface {
@@ -299,6 +300,7 @@ body.rtl-mode .back-to-top {
     /* White pitch border */
     outline: 2.5px solid rgba(255,255,255,0.88);
     outline-offset: -1px;
+    transform-style: preserve-3d;
 }
 
 /* Corner arcs — far end (top of field-surface, far in perspective) */
@@ -441,6 +443,49 @@ body.rtl-mode .back-to-top {
     top: 50%;
     transform: translateY(-50%);
 }
+
+/* ── GOAL POSTS & NETS ─────────────────────────────────────── */
+/* Goal opening: y=366..454 (88px = 7.32m), post height: 80px  */
+/* Far post top: 366-80=286px; near post top: 454-80=374px      */
+
+.gpost, .gbar, .gnet { position: absolute; }
+
+/* Posts — rotate back from field's 61deg tilt to stand upright */
+.gpost {
+    width: 4px;
+    height: 80px;
+    background: rgba(255,255,255,0.97);
+    transform-origin: bottom center;
+    transform: rotateX(-61deg);
+    box-shadow: 0 0 8px rgba(255,255,255,0.45);
+}
+.gp-lf { left: -2px; top: 286px; }
+.gp-ln { left: -2px; top: 374px; }
+.gp-rf { right: -2px; top: 286px; }
+.gp-rn { right: -2px; top: 374px; }
+
+/* Crossbar — elevated horizontally via translateZ */
+.gbar {
+    width: 4px;
+    height: 88px;
+    background: rgba(255,255,255,0.97);
+    transform: translateZ(80px);
+    box-shadow: 0 0 8px rgba(255,255,255,0.45);
+}
+.gb-l { left: -2px; top: 366px; }
+.gb-r { right: -2px; top: 366px; }
+
+/* Net — flat on field surface inside goal line */
+.gnet {
+    top: 366px;
+    height: 88px;
+    width: 44px;
+    background:
+        repeating-linear-gradient(0deg,   rgba(255,255,255,0.24) 0, rgba(255,255,255,0.24) 1.5px, transparent 1.5px, transparent 10px),
+        repeating-linear-gradient(90deg,  rgba(255,255,255,0.24) 0, rgba(255,255,255,0.24) 1.5px, transparent 1.5px, transparent 10px);
+}
+.gn-l { left: 0; }
+.gn-r { right: 0; }
 
 /* ── HERO OVERLAY & CONTENT ────────────────────────────────── */
 .hero-overlay {
