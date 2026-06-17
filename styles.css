@@ -446,31 +446,32 @@ body.rtl-mode .back-to-top {
 
 /* ── GOAL POSTS & NETS ─────────────────────────────────────── */
 /* Goal opening: y=366..454 (88px = 7.32m), post height: 80px  */
-/* Far post top: 366-80=286px; near post top: 454-80=374px      */
+/* Anchor (transform-origin: top) sits on field surface at post base */
 
 .gpost, .gbar, .gnet { position: absolute; }
 
-/* Posts — rotate back from field's 61deg tilt to stand upright */
+/* Posts — extend perpendicular to field surface (local +Z) */
 .gpost {
     width: 4px;
     height: 80px;
     background: rgba(255,255,255,0.97);
-    transform-origin: bottom center;
-    transform: rotateX(-61deg);
-    box-shadow: 0 0 8px rgba(255,255,255,0.45);
+    transform-origin: top center;
+    transform: rotateX(90deg);
+    box-shadow: 0 0 8px rgba(255,255,255,0.5);
 }
-.gp-lf { left: -2px; top: 286px; }
-.gp-ln { left: -2px; top: 374px; }
-.gp-rf { right: -2px; top: 286px; }
-.gp-rn { right: -2px; top: 374px; }
+/* Anchor at the goal-post base positions on the field */
+.gp-lf { left: -2px; top: 366px; }
+.gp-ln { left: -2px; top: 454px; }
+.gp-rf { right: -2px; top: 366px; }
+.gp-rn { right: -2px; top: 454px; }
 
-/* Crossbar — elevated horizontally via translateZ */
+/* Crossbar — elevated horizontally via translateZ (matches post height 80px) */
 .gbar {
     width: 4px;
     height: 88px;
     background: rgba(255,255,255,0.97);
     transform: translateZ(80px);
-    box-shadow: 0 0 8px rgba(255,255,255,0.45);
+    box-shadow: 0 0 8px rgba(255,255,255,0.5);
 }
 .gb-l { left: -2px; top: 366px; }
 .gb-r { right: -2px; top: 366px; }
@@ -481,8 +482,8 @@ body.rtl-mode .back-to-top {
     height: 88px;
     width: 44px;
     background:
-        repeating-linear-gradient(0deg,   rgba(255,255,255,0.24) 0, rgba(255,255,255,0.24) 1.5px, transparent 1.5px, transparent 10px),
-        repeating-linear-gradient(90deg,  rgba(255,255,255,0.24) 0, rgba(255,255,255,0.24) 1.5px, transparent 1.5px, transparent 10px);
+        repeating-linear-gradient(0deg,   rgba(255,255,255,0.22) 0, rgba(255,255,255,0.22) 1.5px, transparent 1.5px, transparent 10px),
+        repeating-linear-gradient(90deg,  rgba(255,255,255,0.22) 0, rgba(255,255,255,0.22) 1.5px, transparent 1.5px, transparent 10px);
 }
 .gn-l { left: 0; }
 .gn-r { right: 0; }
