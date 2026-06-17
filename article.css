@@ -406,3 +406,14 @@
         height: 220px;
     }
 }
+
+.article-inline-link {
+    color: var(--accent, #e8c84a);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: opacity 0.2s;
+}
+
+.article-inline-link:hover {
+    opacity: 0.75;
+}

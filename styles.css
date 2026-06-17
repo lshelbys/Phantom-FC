@@ -222,7 +222,7 @@ body.rtl-mode .back-to-top {
 
 /* ── HERO ───────────────────────────────────────────────────– */
 .hero {
-    background: linear-gradient(160deg, #0a0a0a 0%, #111111 60%, #1a1a1a 100%);
+    background: radial-gradient(ellipse at 60% 40%, #1a2a1a 0%, #0d150d 40%, #080808 100%);
     position: relative;
     min-height: 520px;
     display: flex;
@@ -242,7 +242,7 @@ body.rtl-mode .back-to-top {
 }
 
 .hero-bg, .hero-overlay { position: absolute; inset: 0; }
-.hero-overlay { background: radial-gradient(ellipse at 70% 50%, rgba(255,255,255,0.03) 0%, rgba(0,0,0,0.5) 100%); }
+.hero-overlay { background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.6) 100%); }
 
 .hero-content {
     position: relative;
@@ -327,7 +327,11 @@ body.rtl-mode .back-to-top {
     border-bottom: 1px solid var(--border);
 }
 
-.news-grid { display: flex; flex-direction: column; gap: 2rem; }
+.news-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
 
 .news-card {
     background: var(--primary-light);
@@ -1348,6 +1352,10 @@ body.rtl-mode .back-to-top {
 
     .hero { min-height: 380px; padding: 2.5rem 16px; }
     .hero-title { font-size: 2rem; }
+
+    .news-grid {
+        grid-template-columns: 1fr;
+    }
 
     .news-card {
         grid-template-columns: 1fr;
