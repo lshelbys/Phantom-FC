@@ -502,6 +502,15 @@ body.rtl-mode .back-to-top {
     from { transform: rotateX(80deg) scale(0.88); }
     to   { transform: rotateX(61deg) scale(1);    }
 }
+/* Scaled-down variants for mobile — keeps all child elements proportional */
+@keyframes field-tilt-in-sm {
+    from { transform: rotateX(80deg) scale(0.54); }
+    to   { transform: rotateX(61deg) scale(0.62); }
+}
+@keyframes field-tilt-in-xs {
+    from { transform: rotateX(80deg) scale(0.35); }
+    to   { transform: rotateX(61deg) scale(0.40); }
+}
 @keyframes glow-pulse {
     0%, 100% { opacity: 0.75; }
     50%       { opacity: 1;    }
@@ -1663,12 +1672,13 @@ body.rtl-mode .back-to-top {
 
     .hero { min-height: 480px; padding: 3.5rem 16px 6rem; }
     .hero-title { font-size: 2.6rem; letter-spacing: 2px; }
-    .hero-logo-img { height: 88px; }
-    .hero-content { margin-top: -40px; }
-    .field-surface { width: 860px; height: 600px; }
-    .field-center-circle-mark { width: 160px; height: 160px; }
-    .field-penalty-left, .field-penalty-right { height: 354px; width: 142px; }
-    .field-goal-left, .field-goal-right { height: 161px; width: 47px; }
+    .hero-content { margin-top: -20px; }
+    /* Scale the whole surface down — child elements scale with it */
+    .field-surface {
+        width: 1240px; height: 820px;
+        transform: rotateX(61deg) scale(0.62);
+        animation: field-tilt-in-sm 2s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
 
     .news-grid {
         grid-template-columns: 1fr;
@@ -1714,14 +1724,15 @@ body.rtl-mode .back-to-top {
 @media (max-width: 480px) {
     .hero { min-height: 400px; padding: 2.5rem 16px 5rem; }
     .hero-title { font-size: 1.9rem; letter-spacing: 1px; }
-    .hero-logo-img { height: 68px; }
-    .hero-content { margin-top: -20px; }
+    .hero-content { margin-top: 0; }
     .hero-subtitle { font-size: 0.68rem; letter-spacing: 4px; }
     .hero-btn { padding: 0.65rem 1.4rem; font-size: 0.78rem; }
-    .field-surface { width: 640px; height: 480px; }
-    .field-center-circle-mark { width: 120px; height: 120px; }
-    .field-penalty-left, .field-penalty-right { height: 275px; width: 110px; }
-    .field-goal-left, .field-goal-right { height: 125px; width: 37px; }
+    /* Scale the whole surface down — child elements scale with it */
+    .field-surface {
+        width: 1240px; height: 820px;
+        transform: rotateX(61deg) scale(0.40);
+        animation: field-tilt-in-xs 2s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
 
     .match-app-header { padding: 0.6rem 1rem; }
     .match-team-crest { width: 48px; height: 48px; }
