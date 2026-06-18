@@ -143,9 +143,9 @@ body.rtl-mode .back-to-top {
 }
 
 .main-header.scrolled {
-    background: rgba(8, 8, 18, 0.55);
-    backdrop-filter: blur(18px) saturate(160%);
-    -webkit-backdrop-filter: blur(18px) saturate(160%);
+    background: rgba(10, 10, 10, 0.60);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
     border-bottom-color: transparent;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45);
 }
