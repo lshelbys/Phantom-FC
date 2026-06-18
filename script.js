@@ -136,6 +136,15 @@ document.addEventListener('keydown', e => {
     if (e.key === 'Escape') closeMatchDetail();
 });
 
+// ── Glassmorphism Header on Scroll ───────────────────────
+const mainHeader = document.querySelector('.main-header');
+if (mainHeader) {
+    const toggleGlass = () =>
+        mainHeader.classList.toggle('scrolled', window.scrollY > 60);
+    window.addEventListener('scroll', toggleGlass, { passive: true });
+    toggleGlass(); // apply immediately if page loads mid-scroll
+}
+
 // ── Back to Top Button ────────────────────────────────────
 const backToTopBtn = document.getElementById('backToTop');
 if (backToTopBtn) {

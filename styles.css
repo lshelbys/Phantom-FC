@@ -135,6 +135,22 @@ body.rtl-mode .back-to-top {
     position: sticky;
     top: 0;
     z-index: 200;
+    transition:
+        background   0.4s ease,
+        border-color 0.4s ease,
+        box-shadow   0.4s ease,
+        backdrop-filter 0.4s ease;
+}
+
+.main-header.scrolled {
+    background: rgba(8, 8, 18, 0.55);
+    backdrop-filter: blur(18px) saturate(160%);
+    -webkit-backdrop-filter: blur(18px) saturate(160%);
+    border-bottom-color: rgba(99, 102, 241, 0.35);
+    box-shadow:
+        0 1px 0 0 rgba(99, 102, 241, 0.25),
+        0 8px 32px rgba(0, 0, 0, 0.45),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
 .header-inner {
