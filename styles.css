@@ -20,6 +20,21 @@
     --win:           #4caf50;
 }
 
+[data-theme="light"] {
+    --primary:       #f4f4f5;
+    --primary-dark:  #e8e8ea;
+    --primary-light: #ffffff;
+    --accent:        #18181b;
+    --accent-light:  #3f3f46;
+    --white:         #18181b;
+    --text-dark:     #18181b;
+    --text-gray:     #71717a;
+    --bg-light:      #fafafa;
+    --border:        #e4e4e7;
+    --border-light:  #d4d4d8;
+    --win:           #16a34a;
+}
+
 html { scroll-behavior: smooth; }
 
 body {
@@ -27,6 +42,7 @@ body {
     background: var(--primary);
     color: var(--text-dark);
     line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 a  { text-decoration: none; color: inherit; }
@@ -69,6 +85,29 @@ img { display: block; max-width: 100%; }
     background: var(--white);
     color: var(--primary);
     border-color: var(--white);
+}
+
+.theme-toggle {
+    color: var(--text-gray);
+    font-size: 1rem;
+    padding: 0.5rem;
+    min-width: 40px;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    transition: color 0.2s, background 0.2s;
+    margin-right: 0.25rem;
+}
+
+.theme-toggle:hover {
+    color: var(--white);
+    background: rgba(255,255,255,0.08);
+}
+
+[data-theme="light"] .theme-toggle:hover {
+    background: rgba(0,0,0,0.06);
 }
 
 /* ── BACK TO TOP ─────────────────────────────────────────── */
@@ -320,8 +359,9 @@ body.rtl-mode .back-to-top {
 
     /* Smooth pitch surface — depth fade from far edge (darker) to near edge */
     background:
+        radial-gradient(ellipse 58% 38% at 50% 52%, rgba(255,255,255,0.045) 0%, transparent 100%),
         linear-gradient(to bottom, rgba(0,0,0,0.28) 0%, transparent 55%),
-        linear-gradient(to top,    rgba(60,170,60,0.10) 0%, transparent 30%),
+        linear-gradient(to top,    rgba(40,150,40,0.12) 0%, transparent 35%),
         #1b6b1b;
 
     /* White pitch border */
@@ -354,6 +394,26 @@ body.rtl-mode .back-to-top {
     border-right: none;
     border-radius: 0 0 0 100%;
     top: -1px;
+    right: -1px;
+}
+
+/* Bottom corner arcs (separate elements since pseudo-elements are taken) */
+.field-corner-bl,
+.field-corner-br { position: absolute; width: 38px; height: 38px; border: 2.5px solid rgba(255,255,255,0.82); }
+
+.field-corner-bl {
+    border-top: none;
+    border-left: none;
+    border-radius: 100% 0 0 0;
+    bottom: -1px;
+    left: -1px;
+}
+
+.field-corner-br {
+    border-top: none;
+    border-right: none;
+    border-radius: 0 100% 0 0;
+    bottom: -1px;
     right: -1px;
 }
 
@@ -471,6 +531,34 @@ body.rtl-mode .back-to-top {
     transform: translateY(-50%);
 }
 
+/* ── PENALTY ARCS (D) ──────────────────────────────────────── */
+/* Circle r=110px (9.15m), centre on penalty spot, clipped to show only    */
+/* the portion outside the penalty box (sticking into the field).           */
+.field-arc-left,
+.field-arc-right {
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    border: 2.5px solid rgba(255,255,255,0.85);
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Spot left at x=130, circle spans x=20..240; box edge at x=195           */
+/* show only x>195 → clip left 175px of 220px element                      */
+.field-arc-left {
+    left: 20px;
+    clip-path: inset(0 0 0 175px);
+}
+
+/* Spot right at x=1110, element right edge at 1240-20=1220, left=1000     */
+/* box edge at x=1045 → in element coords: 45px from left; clip right 175px */
+.field-arc-right {
+    right: 20px;
+    clip-path: inset(0 175px 0 0);
+}
+
 /* ── GOAL POSTS & NETS ─────────────────────────────────────── */
 /* Goal opening: y=366..454 (88px = 7.32m), post height: 80px  */
 /* Anchor (transform-origin: top) sits on field surface at post base */
@@ -514,6 +602,25 @@ body.rtl-mode .back-to-top {
 }
 .gn-l { left: 0; }
 .gn-r { right: 0; }
+
+/* ── BALL ─────────────────────────────────────────────────────── */
+.field-ball {
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    background: radial-gradient(circle at 38% 35%, #ffffff, #cccccc);
+    border-radius: 50%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) translateZ(13px);
+    box-shadow: 0 0 14px rgba(255,255,255,0.7), 0 5px 10px rgba(0,0,0,0.45);
+    animation: ball-pulse 4s ease-in-out 3s infinite;
+}
+
+@keyframes ball-pulse {
+    0%, 100% { box-shadow: 0 0 14px rgba(255,255,255,0.7), 0 5px 10px rgba(0,0,0,0.45); }
+    50%       { box-shadow: 0 0 28px rgba(255,255,255,0.95), 0 7px 14px rgba(0,0,0,0.5); }
+}
 
 /* ── HERO ANIMATIONS ────────────────────────────────────────── */
 /*
@@ -697,12 +804,13 @@ body.rtl-mode .back-to-top {
     grid-template-columns: 380px 1fr;
     min-height: 300px;
     cursor: pointer;
-    transition: border-color 0.2s, transform 0.2s;
+    transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s, background-color 0.3s;
 }
 
 .news-card:hover {
     border-color: var(--border-light);
-    transform: translateY(-2px);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.18);
 }
 
 .news-img {
@@ -710,6 +818,18 @@ body.rtl-mode .back-to-top {
     position: relative;
     display: flex;
     align-items: flex-start;
+    overflow: hidden;
+}
+
+.news-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.news-card:hover .news-img img {
+    transform: scale(1.04);
 }
 
 .news-category-badge {
@@ -818,11 +938,15 @@ body.rtl-mode .back-to-top {
     border-radius: 6px;
     overflow: hidden;
     cursor: pointer;
-    transition: border-color 0.2s;
+    transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s, background-color 0.3s;
     margin-bottom: 1rem;
 }
 
-.match-app-card:hover { border-color: var(--border-light); }
+.match-app-card:hover {
+    border-color: var(--border-light);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.14);
+}
 
 .match-app-header {
     background: var(--primary-dark);
@@ -1441,10 +1565,14 @@ body.rtl-mode .back-to-top {
     border: 1px solid var(--border);
     border-radius: 4px;
     padding: 1.8rem;
-    transition: border-color 0.2s;
+    transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s, background-color 0.3s;
 }
 
-.info-box:hover { border-color: var(--border-light); }
+.info-box:hover {
+    border-color: var(--border-light);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
 
 .info-box h4 {
     font-size: 0.78rem;
@@ -1798,6 +1926,84 @@ body.rtl-mode .back-to-top {
 
     .float-menu-links li a { padding: 0.9rem 1.2rem; min-height: 44px; }
     .float-menu-links li a:hover { padding-left: 1.5rem; }
+}
+
+/* ── LIGHT MODE OVERRIDES ──────────────────────────────────– */
+/* Hero always stays dark — its background and overlay are hardcoded.       */
+/* Only non-hero elements inherit from CSS variables.                       */
+
+[data-theme="light"] .main-header {
+    background: rgba(255,255,255,0.97);
+    border-bottom-color: #e4e4e7;
+    box-shadow: 0 1px 14px rgba(0,0,0,0.07);
+}
+
+[data-theme="light"] .main-header.scrolled {
+    background: rgba(255,255,255,0.88);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border-bottom-color: rgba(0,0,0,0.05);
+    box-shadow: 0 4px 24px rgba(0,0,0,0.1);
+}
+
+[data-theme="light"] .main-nav {
+    background: #ffffff;
+    border-bottom-color: #e4e4e7;
+}
+
+/* Keep hero text white — hero bg is always dark */
+[data-theme="light"] .hero-title,
+[data-theme="light"] .hero-content { color: #ffffff; }
+
+/* Cards get a soft shadow in light mode for depth */
+[data-theme="light"] .news-card,
+[data-theme="light"] .match-app-card,
+[data-theme="light"] .info-box {
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+[data-theme="light"] .news-card:hover,
+[data-theme="light"] .match-app-card:hover,
+[data-theme="light"] .info-box:hover {
+    box-shadow: 0 10px 28px rgba(0,0,0,0.1);
+}
+
+/* Match header uses --primary-dark which in light mode is #e8e8ea — fine   */
+[data-theme="light"] .match-app-header {
+    background: #f0f0f2;
+    border-bottom-color: #e4e4e7;
+}
+
+/* Section title border readable in light */
+[data-theme="light"] .section-title { color: #52525b; }
+
+/* Footer light treatment */
+[data-theme="light"] .footer {
+    background: #ececee;
+    border-top: 1px solid #dddde0;
+}
+
+[data-theme="light"] .footer-main { border-color: #dddde0; }
+[data-theme="light"] .footer-socials { border-top-color: #dddde0; }
+[data-theme="light"] .footer-bottom { border-top-color: #dddde0; color: #71717a; }
+
+/* Secondary nav if present */
+[data-theme="light"] .secondary-nav {
+    background: rgba(255,255,255,0.97);
+    border-bottom-color: #e4e4e7;
+}
+
+/* Smooth transition on key structural elements for theme switch */
+.main-header,
+.news-card,
+.match-app-card,
+.info-box,
+.footer,
+.match-app-header,
+.secondary-nav {
+    transition-property: background-color, border-color, box-shadow, color;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
 }
 
 /* ── RTL (ARABIC) SUPPORT ─────────────────────────────────– */
