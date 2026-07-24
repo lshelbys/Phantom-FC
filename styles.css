@@ -316,21 +316,6 @@ body.rtl-mode .back-to-top {
     pointer-events: none;
 }
 
-/* Subtle diagonal floodlight beams */
-.hero::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image: repeating-linear-gradient(
-        -22deg,
-        transparent,
-        transparent 140px,
-        rgba(255,255,255,0.011) 140px,
-        rgba(255,255,255,0.011) 141px
-    );
-    z-index: 1;
-    pointer-events: none;
-}
 
 .hero-bg { position: absolute; inset: 0; }
 

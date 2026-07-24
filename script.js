@@ -20,43 +20,6 @@ if (themeToggleBtn) {
     });
 }
 
-// ── Hero Field: Floating + Parallax ──────────────────────
-(function () {
-    const heroSection = document.querySelector('.hero');
-    const field3d     = document.querySelector('.hero-field-3d');
-    if (!heroSection || !field3d) return;
-
-    let targetRY  = 0;
-    let currentRY = 0;
-    let startTime = null;
-
-    function lerp(a, b, t) { return a + (b - a) * t; }
-
-    function tick(timestamp) {
-        if (!startTime) startTime = timestamp;
-        const elapsed = (timestamp - startTime) / 1000; // seconds
-
-        // Gentle sine-wave float — translates the whole 3D container up/down
-        const floatY = Math.sin(elapsed * 0.65) * 9;
-
-        // Parallax: smoothly track mouse X
-        currentRY = lerp(currentRY, targetRY, 0.055);
-
-        field3d.style.transform = `translateY(${floatY.toFixed(2)}px) rotateY(${currentRY.toFixed(3)}deg)`;
-        requestAnimationFrame(tick);
-    }
-
-    requestAnimationFrame(tick);
-
-    heroSection.addEventListener('mousemove', (e) => {
-        const rect = heroSection.getBoundingClientRect();
-        const x = (e.clientX - rect.left) / rect.width - 0.5; // −0.5 … 0.5
-        targetRY = x * 7; // max ±3.5 deg
-    });
-
-    heroSection.addEventListener('mouseleave', () => { targetRY = 0; });
-})();
-
 // ── Mobile Menu Toggle ────────────────────────────────────
 const menuBtn = document.getElementById('menuBtn');
 const mainNav = document.querySelector('.main-nav');
